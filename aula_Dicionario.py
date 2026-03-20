@@ -73,7 +73,7 @@ turma = [
     ['Beto', 7.0],
     ['Luisa', 6.9]
 ]
-
+'''
 for aluno in turma:
     nome = aluno[0]
     nota = aluno[1]
@@ -81,3 +81,87 @@ for aluno in turma:
 
 for i, aluno in enumerate(turma):
     print(f"{i}: {aluno}")
+'''
+
+'''
+#sobreescreve o arquivo com w
+with open ('teste.txt','w',encoding='utf-8')as arquivo:
+    arquivo.write("primeira linha\n")
+    arquivo.write("segunda linha\n")
+   
+
+#a = append adiciona no fim com a
+with open ('teste.txt','a',encoding='utf-8')as arquivo:
+    arquivo.write("terceira linha\n")
+  
+
+#Lendo o arquivo 'r' - arquivos menores - arquivos strings:
+with open ('teste.txt','r',encoding='utf-8')as arquivo:
+    conteudo=arquivo.read()
+    print(conteudo)
+
+with open ('teste.txt','r',encoding='utf-8')as arquivo:
+    for linha in arquivo:
+        print(linha.strip())#Remove as linhas a mais
+        
+
+with open ('teste.txt','r',encoding='utf-8')as arquivo:
+   linhas=arquivo.readlines ()
+   print(linhas)
+#Exercicios de manipulação de dados -- Apostila Revisão de Python
+
+#Exercicio1
+with open ('frutas.txt','w',encoding='utf-8')as arquivo:
+    arquivo.write("Maçã\n")
+    arquivo.write("Pêssego\n")
+    arquivo.write("Mamão\n")
+    arquivo.write("Banana\n")
+    arquivo.write("Morango\n")
+    
+with open ('frutas.txt','r',encoding='utf-8')as arquivo:
+    conteudo=arquivo.read()
+    print(conteudo)
+
+
+#Exercicio2
+with open ('compras.txt','w',encoding='utf-8')as arquivo:
+            arquivo.write(" Lista de compras: \n")
+while True:
+    usuario = input("Digite os itens da sua lista de compras ou escreva sair:")
+    if usuario == 'sair':
+            with open ('compras.txt','r',encoding='utf-8')as arquivo:
+                conteudo=arquivo.read()
+                print(conteudo)
+        
+    else: 
+        with open ('compras.txt','a',encoding='utf-8')as arquivo:
+            
+            arquivo.write(usuario + "\n")
+'''        
+#Exercicio3
+with open ('diario.txt','w',encoding='utf-8')as arquivo:
+            arquivo.write(" Querido diario...: \n")
+
+from datetime import datetime
+agora = datetime.now().strftime('%d/%m/%Y %H:%M')
+while True:
+    usuario= input("Digite uma anotação ou digite sair:")
+    if usuario=='sair':
+        with open ('diario.txt','r',encoding='utf-8')as arquivo:
+                conteudo=arquivo.read()
+                print(conteudo)
+    else:
+        with open ('diario.txt','a',encoding='utf-8')as arquivo:
+             arquivo.write(agora + " -- " + usuario + "\n")
+
+#Exercicio4
+             
+with open ('diario.txt','w',encoding='utf-8')as arquivo:
+            arquivo.write(" Querido diario...: \n")
+            
+with open ('compras.txt','w',encoding='utf-8')as arquivo:
+            arquivo.write(" Lista de compras: \n")
+            
+with open ('frutas.txt','w',encoding='utf-8')as arquivo:
+            arquivo.write(" Frutas: \n")
+            
