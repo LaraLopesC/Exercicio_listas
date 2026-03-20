@@ -36,22 +36,33 @@ for nome in nomes:
 for i, nome in enumerate (nomes):
     print(f' Aluno{i}:{nome}')
 
-#3 xxx
+#Exercício 3:
+
 numeros = [3, 17, 8, 42, 5, 100, 23, 66, 11, 99]
+numeros.sort() #Eu coloquei para uma melhor visualização.
 
-if numeros %2==0:
-    print("É par", numeros)
+lista=[]
+for numero in numeros:
+    if numero%2==0:
+        lista.append(numero)
+print(f' Números pares dessa lista: {lista}')
 
-else:
-    print()
+nova_lista=[]
+for numero in numeros:
+    if numero>20:
+        nova_lista.append(numero)
+print(f' Números maiores que 20 nessa lista: {nova_lista}')
+        
+total = sum(numeros)
+print(f' Total da soma dos números contido na lista principal: {total}')
+'''
 
-print("Numeros pares:",numeros)    
-
-#4 xxx
-num = list(range(11))
-print('Primeiros:',num[0:4])
-print('Ultimos:',num[8:11])
-print('Pares:',num[])
+#Exercício 4:
+'''
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numeros[:4])
+print(numeros[7:])
+print(numeros[1:11:2])
 
 print(num)
 '''
